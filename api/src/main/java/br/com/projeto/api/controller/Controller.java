@@ -29,6 +29,12 @@ public class Controller {
     public List<Pessoa> selecionar(){
         return acao.findAll();
     }
+
+    //Listar por ID
+    @GetMapping("/api/{codigo}")
+    public Pessoa selecionarPeloCodigo(@PathVariable int codigo){
+        return acao.findByCodigo(codigo);
+    }
     
     @GetMapping("")
     public String mensagem(){
