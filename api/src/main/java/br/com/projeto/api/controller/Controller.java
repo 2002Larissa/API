@@ -1,5 +1,7 @@
 package br.com.projeto.api.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,9 +18,16 @@ public class Controller {
     @Autowired
     private Repositorio acao;
 
+    //Cadastrar
     @PostMapping("/api")
     public Pessoa cadastrar(@RequestBody Pessoa obj){
         return acao.save(obj);
+    }
+
+    //Listar
+    @GetMapping("/api")
+    public List<Pessoa> selecionar(){
+        return acao.findAll();
     }
     
     @GetMapping("")
