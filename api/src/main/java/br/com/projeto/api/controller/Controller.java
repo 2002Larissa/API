@@ -76,6 +76,7 @@ public class Controller {
         return acao.findByNomeContaining("u");
     }
 
+    //Filtrando nomes atraves do primeiro e último caractere
     @GetMapping("/api/inicia-com")
     public List<Pessoa> iniciaCom(){
         return acao.findByNomeStartsWith("A");
@@ -85,6 +86,13 @@ public class Controller {
     public List<Pessoa> terminaCom(){
         return acao.findByNomeEndsWith("a");
     }
+
+    //Somando todas as idades
+    @GetMapping("/api/somaIdades")
+    public int somaIdades(){
+        return acao.somaIdades();
+    }
+
     
     @GetMapping("")
     public String mensagem(){
