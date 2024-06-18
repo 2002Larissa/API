@@ -52,10 +52,16 @@ public class Controller {
         acao.delete(obj);
     }
 
-    //Contandor de resgistros
+    //Contador de resgistros
     @GetMapping("/api/contador")
     public long contador(){
         return acao.count();
+    }
+
+    //Ordenador de registros
+    @GetMapping("/api/ordenar-nomes")
+    public List<Pessoa> ordenarnomes(){
+        return acao.findByOrderByNomeDesc();
     }
     
     @GetMapping("")
