@@ -63,6 +63,11 @@ public class Controller {
     public List<Pessoa> ordenarnomes(){
         return acao.findByOrderByNomeDesc();
     }
+
+    @GetMapping("api/ordenar-nomes-2")
+    public List<Pessoa> ordenarnomes2(){
+        return acao.findByNomeOrderByIdadeDesc("Tatiana");
+    }
     
     @GetMapping("")
     public String mensagem(){
