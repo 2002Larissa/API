@@ -70,9 +70,20 @@ public class Controller {
         return acao.findByNomeOrderByIdadeDesc("Tatiana");
     }
 
+    //Filtrando caractere do nome através do Containing
     @GetMapping("/api/nome-contem")
     public List<Pessoa> nomeContem(){
         return acao.findByNomeContaining("u");
+    }
+
+    @GetMapping("/api/inicia-com")
+    public List<Pessoa> iniciaCom(){
+        return acao.findByNomeStartsWith("A");
+    }
+
+    @GetMapping("/api/termina-com")
+    public List<Pessoa> terminaCom(){
+        return acao.findByNomeEndsWith("a");
     }
     
     @GetMapping("")
