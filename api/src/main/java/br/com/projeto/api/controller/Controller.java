@@ -82,6 +82,7 @@ public class Controller {
         return acao.findByNomeStartsWith("A");
     }
 
+    //Metodo para determinar que nomes terminam com determinada letra
     @GetMapping("/api/termina-com")
     public List<Pessoa> terminaCom(){
         return acao.findByNomeEndsWith("a");
@@ -91,6 +92,12 @@ public class Controller {
     @GetMapping("/api/somaIdades")
     public int somaIdades(){
         return acao.somaIdades();
+    }
+
+    //
+    @GetMapping("/api/idadeMaiorIgual")
+    public List<Pessoa> idadeMaiorIgual(){
+        return acao.idadeMaiorIgual(31);
     }
 
     
