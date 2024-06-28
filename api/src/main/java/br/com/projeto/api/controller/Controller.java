@@ -34,8 +34,8 @@ public class Controller {
 
     //Listar
     @GetMapping("/api")
-    public List<Pessoa> selecionar(){
-        return acao.findAll();
+    public ResponseEntity<?> selecionar(){
+        return servico.selecionar();
     }
 
     //Listar por ID

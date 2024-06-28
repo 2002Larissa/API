@@ -20,6 +20,8 @@ public class Servico {
 
     public ResponseEntity<?> cadastrar(Pessoa obj){
         
+
+        //MÉTODO PARA CADASTRAR PESSOAS 
         if(obj.getNome().equals("")){
             mensagem.setMensagem("O nome precisa ser preenchido");
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
@@ -29,5 +31,10 @@ public class Servico {
         }else{
             return new ResponseEntity<>(acao.save(obj), HttpStatus.CREATED);
         }
+    }
+
+    //MÉTODO PARA SELECIONAR PESSOAS
+    public ResponseEntity<?> selecionar(){
+        return new ResponseEntity<>(acao.findAll(), HttpStatus.OK);
     }
 }
