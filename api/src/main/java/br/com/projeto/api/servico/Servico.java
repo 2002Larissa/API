@@ -32,7 +32,7 @@ public class Servico {
         }
     }
 
-    //MÉTODO PARA SELECIONAR PESSOAS
+    //MÉTODO PARA LISTAR PESSOAS
     public ResponseEntity<?> selecionar(){
         return new ResponseEntity<>(acao.findAll(), HttpStatus.OK);
     }
