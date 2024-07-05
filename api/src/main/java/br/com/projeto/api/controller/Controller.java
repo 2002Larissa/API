@@ -33,9 +33,9 @@ public class Controller {
     }
 
     //Listar
-    @GetMapping("/api")
+    @GetMapping("/api") 
     public ResponseEntity<?> selecionar(){
-        return servico.selecionar();
+        return servico.selecionar(); // Não está funcionando mesmo o código não tendo erro.
     }
 
     //Listar por ID
