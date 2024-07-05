@@ -19,7 +19,6 @@ public class Servico {
     private Repositorio acao;
 
     public ResponseEntity<?> cadastrar(Pessoa obj){
-        
 
         //MÉTODO PARA CADASTRAR PESSOAS 
         if(obj.getNome().equals("")){
