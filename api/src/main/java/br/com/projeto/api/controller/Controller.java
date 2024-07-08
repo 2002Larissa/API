@@ -52,10 +52,8 @@ public class Controller {
 
     //Deletar
     @DeleteMapping("/api/{codigo}")
-    public void remover(@PathVariable int codigo){
-        //Pessoa obj = selecionarPeloCodigo(codigo);
-
-        //acao.delete(obj);
+    public ResponseEntity<?> remover(@PathVariable int codigo){
+        return servico.remover(codigo);
     }
 
     //Contador de resgistros

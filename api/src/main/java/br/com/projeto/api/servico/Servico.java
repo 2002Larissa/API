@@ -65,4 +65,20 @@ public class Servico {
         }
     }
 
+    //MÉTODO PARA REMOVER REGISTROS
+    public ResponseEntity<?> remover(int codigo){
+
+        if(acao.countByCodigo(codigo) == 0){
+            mensagem.setMensagem("O código informado não existe"); 
+            return new ResponseEntity<>(mensagem, HttpStatus.NOT_FOUND);
+        }else{
+
+            Pessoa obj = acao.findByCodigo(codigo);
+            acao.delete(obj);
+
+            mensagem.setMensagem("O usuário foi removido!");
+            return new ResponseEntity<>(mensagem, HttpStatus.OK);
+
+        }
+    }
 }
